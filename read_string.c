@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 char *read_string_dynamically() {
-  int capacity = 10; // initial capacity
+  int capacity = 100; // initial capacity
   int length = 0;    // keep track of where we are in the string
   char *buffer = malloc(capacity * sizeof(char));
 
@@ -34,4 +34,11 @@ char *read_string_dynamically() {
   // shrink the buffer size to only what's needed (so as not to waste RAM), +1 because length is 0 indexed but realloc counts from 1, therefore we'll be off by 1 without the +1
   char *final_buffer = realloc(buffer, length + 1);
   return final_buffer ? final_buffer : buffer;
+}
+
+int main(void){
+  printf("Enter string: ");
+  char *user_input = read_string_dynamically();
+  puts(user_input);
+  return 0;
 }
