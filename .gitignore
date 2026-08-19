@@ -4,6 +4,7 @@
 # do not ignore .c and .h files
 !*.c
 !*.h
+!*LICENCE
 
 # do not ignore git ignore
 !*.gitignore
